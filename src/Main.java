@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Main {
 
+    //Projet fait par Mathis Fortin et Samuel Boivin-Pigeon
+
     public static void main(String[]args) {
 
         //Variable

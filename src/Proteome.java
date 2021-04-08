@@ -9,6 +9,7 @@ public class Proteome {
         map.put(proteines.getNomCourt(), proteines);
     }
 
+    // REB : Choisir une visibilité
     Proteines rechercherNomCourtExact(String nomCourt){
         return map.get(nomCourt);
     }

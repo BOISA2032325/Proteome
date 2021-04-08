@@ -2,6 +2,7 @@ import java.util.Objects;
 
 public class Proteines implements Comparable<Proteines> {
 
+    // REB : Encapsulation : mettre privé
     String nomCourt;
 
     public Proteines(String nomCourt) {

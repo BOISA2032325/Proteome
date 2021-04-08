@@ -25,7 +25,7 @@ public class  AcideAmine {
         Y("Tyrosine", "Tyr"),
         V("Valine", "Val");
 
-
+        // REB : Devraient être finaux
         private String acideAmine;
         private String abreviationlongue;
 
@@ -37,6 +37,8 @@ public class  AcideAmine {
         }
     }
 
+    // REB : Choisir une visibilité (public ou privée)
+    // REB : la séquence n'est pas validée
     Map<AcideAmines, Integer> lireAcideAmines(String sequence) {
         Map<AcideAmines, Integer> laMap = new HashMap<>();
         for (int i = 0; i < sequence.length(); i++) {

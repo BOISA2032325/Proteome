@@ -30,7 +30,7 @@ public class Main {
         System.out.println(proteome.rechercherNomCourtExact("GHI"));
 
         AcideAmine acideAmine = new AcideAmine();
-        System.out.println(acideAmine.lireAcideAmines("AAAAGG"));
+        System.out.println(acideAmine.lireAcideAmines("AAAAGaaa1."));
         System.out.println(acideAmine.lireAcideAmines("GAGA"));
         System.out.println(acideAmine.lireAcideAmines("GDEFF"));
 

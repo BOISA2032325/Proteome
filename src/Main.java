@@ -1,3 +1,12 @@
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import java.io.File;
+import java.io.IOException;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
@@ -14,6 +23,29 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String choixUtilisateurDansLeMenu;
         Proteome proteome = new Proteome();
+
+       /* try {
+
+            File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien.xml");
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            Document document = documentBuilder.parse(ficher);
+
+            document.getDocumentElement().normalize();
+            System.out.println(document.getElementsByTagName("sequence").item(0).getTextContent());
+
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
+
+        */
+
+
+
 
 
         System.out.println("baptiser la proteine 1");
@@ -64,7 +96,26 @@ public class Main {
 
             if (choixUtilisateurDansLeMenu.equals("E")){
 
+                String choixDuMenu;
+
+                do {
+
+                    System.out.println("Pour ecrire une chaine d'acide ecrire E");
+                    System.out.println("Pour retourner au menu principal écrire R");
+                    choixDuMenu = sc.next();
+
+                    if (choixDuMenu.equals("E")){
+
+                        System.out.println("Veuillez écrire la chaine d'acide");
+                        String sequenceAcideVoulu = sc.next();
+                        System.out.println(acideAmine.lireAcideAmines(sequenceAcideVoulu));
+                    }
+
+                }while (!choixDuMenu.equals("R"));
+
+
             }
+
 
 
 

@@ -82,6 +82,7 @@ public class Main {
             System.out.println("- Pour entrer une proteine entrer la lettre E");
             System.out.println("- Pour quitter le programme entrer la lettre Q");
             System.out.println("- Pour obtenir la liste des acide entrer la lettre O");
+            System.out.println("- Pour chercher une proteine par sont nom écrire C");
 
             choixUtilisateurDansLeMenu = sc.next();
             choixUtilisateurDansLeMenu.toUpperCase();

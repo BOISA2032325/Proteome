@@ -60,18 +60,14 @@ public class Main {
 
             if (choixUtilisateurDansLeMenu.equals("O")){
 
-                do {
+                for (AcideAmine.AcideAmines variable : AcideAmine.AcideAmines.values()){
+                    System.out.println(variable + " Nom complet: " + variable.getAcideAmine() + " Abréviation: " + variable.getAbreviationlongue());
+                }
 
+            }
 
-                    for (AcideAmine.AcideAmines variable : AcideAmine.AcideAmines.values()){
-                        System.out.println(variable + " Nom complet: " + variable.getAcideAmine() + " Abréviation: " + variable.getAbreviationlongue());
-                    }
+            if (choixUtilisateurDansLeMenu.equals("E")){
 
-                    System.out.println("Pour retourner au menu principal ecrire R");
-                    choixUtilisateurDansLeMenu = sc.next();
-
-
-                }while (!choixUtilisateurDansLeMenu.equals("R"));
             }
 
 

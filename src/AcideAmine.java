@@ -1,6 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
-public class  AcideAmine {
+public class AcideAmine {
 
      public enum AcideAmines {
 
@@ -30,12 +30,23 @@ public class  AcideAmine {
         private String abreviationlongue;
 
 
+
+
         AcideAmines(String acideAmine, String abreviationlongue) {
             this.acideAmine = acideAmine;
             this.abreviationlongue = abreviationlongue;
 
         }
-    }
+
+         public String getAcideAmine() {
+             return acideAmine;
+         }
+
+         public String getAbreviationlongue(){
+            return abreviationlongue;
+         }
+     }
+
 
     Map<AcideAmines, Integer> lireAcideAmines(String sequence) {
         Map<AcideAmines, Integer> laMap = new HashMap<>();
@@ -47,5 +58,7 @@ public class  AcideAmine {
         }
         return laMap;
     }
+
+
 }
 

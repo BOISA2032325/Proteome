@@ -1,4 +1,5 @@
 import java.util.Locale;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -13,6 +14,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String choixUtilisateurDansLeMenu;
         Proteome proteome = new Proteome();
+
+        /*
 
         System.out.println("baptiser la proteine 1");
         Proteines proteines1 = new Proteines(sc.next());
@@ -35,6 +38,9 @@ public class Main {
         System.out.println(acideAmine.lireAcideAmines("GDEFF"));
 
 
+         */
+
+
         //Affichage du menu de base
 
 
@@ -51,6 +57,24 @@ public class Main {
 
             choixUtilisateurDansLeMenu = sc.next();
             choixUtilisateurDansLeMenu.toUpperCase();
+
+            if (choixUtilisateurDansLeMenu.equals("O")){
+
+                do {
+
+
+                    for (AcideAmine.AcideAmines variable : AcideAmine.AcideAmines.values()){
+                        System.out.println(variable + " Nom complet: " + variable.getAcideAmine() + " Abréviation: " + variable.getAbreviationlongue());
+                    }
+
+                    System.out.println("Pour retourner au menu principal ecrire R");
+                    choixUtilisateurDansLeMenu = sc.next();
+
+
+                }while (!choixUtilisateurDansLeMenu.equals("R"));
+            }
+
+
 
         }while (!choixUtilisateurDansLeMenu.equals("Q"));
 

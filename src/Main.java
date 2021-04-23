@@ -15,7 +15,6 @@ public class Main {
         String choixUtilisateurDansLeMenu;
         Proteome proteome = new Proteome();
 
-        /*
 
         System.out.println("baptiser la proteine 1");
         Proteines proteines1 = new Proteines(sc.next());
@@ -38,9 +37,6 @@ public class Main {
         System.out.println(acideAmine.lireAcideAmines("GDEFF"));
 
 
-         */
-
-
         //Affichage du menu de base
 
 
@@ -50,7 +46,7 @@ public class Main {
 
         do {
 
-            System.out.println("Voici le fonctionnement du programme : ");
+            System.out.println("Voici le menu principal : ");
             System.out.println("- Pour entrer une proteine entrer la lettre E");
             System.out.println("- Pour quitter le programme entrer la lettre Q");
             System.out.println("- Pour obtenir la liste des acide entrer la lettre O");
@@ -61,7 +57,7 @@ public class Main {
             if (choixUtilisateurDansLeMenu.equals("O")){
 
                 for (AcideAmine.AcideAmines variable : AcideAmine.AcideAmines.values()){
-                    System.out.println(variable + " Nom complet: " + variable.getAcideAmine() + " Abréviation: " + variable.getAbreviationlongue());
+                    System.out.println("- Abréviation courte: " + variable + " Nom complet: " + variable.getAcideAmine() + " Abréviation: " + variable.getAbreviationlongue());
                 }
 
             }

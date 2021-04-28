@@ -1,5 +1,8 @@
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Stream;
 
 public class Proteome {
 
@@ -12,4 +15,8 @@ public class Proteome {
     Proteines rechercherNomCourtExact(String nomCourt){
         return map.get(nomCourt);
     }
+
+
+
+
 }

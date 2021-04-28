@@ -1,4 +1,6 @@
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -7,9 +9,12 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 
 public class Main {
@@ -24,15 +29,21 @@ public class Main {
         String choixUtilisateurDansLeMenu;
         Proteome proteome = new Proteome();
 
-       /* try {
+        try {
 
             File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien.xml");
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             Document document = documentBuilder.parse(ficher);
-
             document.getDocumentElement().normalize();
-            System.out.println(document.getElementsByTagName("sequence").item(0).getTextContent());
+            NodeList nodeList = document.getElementsByTagName("name");
+            for (int temp = 0; temp < nodeList.getLength(); temp++){
+                Node node = nodeList.item(temp);
+                System.out.println("\nCurrentElement :" + nodeList.getLength());
+            }
+
+
+
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -42,12 +53,23 @@ public class Main {
             e.printStackTrace();
         }
 
-        */
+
 
 
 
 
         //Affichage du menu de base
+
+        File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien.xml");
+
+        /*try(Stream <String> sf = Files.lines(Paths.get(String.valueOf(ficher)))) {
+            sf.forEach(System.out ::println);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+         */
+
 
 
         System.out.println("**************************************************************************************");

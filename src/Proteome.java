@@ -16,7 +16,10 @@ public class Proteome {
         return map.get(nomCourt);
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Proteome{" +
+                "map=" + map +
+                '}';
+    }
 }

@@ -1,4 +1,5 @@
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -27,33 +28,6 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String choixUtilisateurDansLeMenu;
-        Proteome proteome = new Proteome();
-
-        try {
-
-            File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien.xml");
-            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(ficher);
-            document.getDocumentElement().normalize();
-            NodeList nodeList = document.getElementsByTagName("name");
-            for (int temp = 0; temp < nodeList.getLength(); temp++){
-                Node node = nodeList.item(temp);
-                System.out.println("\nCurrentElement :" + nodeList.getLength());
-            }
-
-
-
-
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        }
-
-
 
 
 
@@ -83,15 +57,10 @@ public class Main {
         //Affichage du menu de base
 
         File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien.xml");
-
-        /*try(Stream <String> sf = Files.lines(Paths.get(String.valueOf(ficher)))) {
-            sf.forEach(System.out ::println);
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-
-         */
-
+        Proteome proteome;
+        ChargeurXML chargeurXML = new ChargeurXML();
+        proteome = chargeurXML.chargeur();
+        System.out.println(proteome);
 
 
         System.out.println("**************************************************************************************");

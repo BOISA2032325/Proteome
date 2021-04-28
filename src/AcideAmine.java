@@ -47,6 +47,8 @@ public class AcideAmine {
          }
      }
 
+     //Validation chaine
+
 
     Map<AcideAmines, Integer> lireAcideAmines(String sequence) {
         Map<AcideAmines, Integer> laMap = new HashMap<>();

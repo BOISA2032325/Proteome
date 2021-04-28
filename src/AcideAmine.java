@@ -1,5 +1,8 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class AcideAmine {
 
      public enum AcideAmines {
@@ -49,16 +52,30 @@ public class AcideAmine {
 
      //Validation chaine
 
+    static boolean validationAcideAmine(String chaineAcide){
+        if (chaineAcide == null)
+            throw new IllegalArgumentException("Oups rip");
+        else {
+            Pattern patternAcide = Pattern.compile("^(([1-9][0-9]*)*[ARNDCEQGHILKMFPSTWYV]+)*$");
+            Matcher matcher = patternAcide.matcher(chaineAcide);
+            boolean valide = matcher.find();
+            return valide;
+        }
+    }
 
     Map<AcideAmines, Integer> lireAcideAmines(String sequence) {
-        Map<AcideAmines, Integer> laMap = new HashMap<>();
-        for (int i = 0; i < sequence.length(); i++) {
-            if (laMap.containsKey(AcideAmines.valueOf(sequence.substring(i, i+1))))
-                laMap.replace(AcideAmines.valueOf(sequence.substring(i, i+1)), laMap.get(AcideAmines.valueOf(sequence.substring(i, i+1)))+1);
-            else
-                laMap.put(AcideAmines.valueOf(sequence.substring(i, i+1)),+1);
-        }
-        return laMap;
+         if (validationAcideAmine(sequence) == true){
+             Map<AcideAmines, Integer> laMap = new HashMap<>();
+             for (int i = 0; i < sequence.length(); i++) {
+                 if (laMap.containsKey(AcideAmines.valueOf(sequence.substring(i, i+1))))
+                     laMap.replace(AcideAmines.valueOf(sequence.substring(i, i+1)), laMap.get(AcideAmines.valueOf(sequence.substring(i, i+1)))+1);
+                 else
+                     laMap.put(AcideAmines.valueOf(sequence.substring(i, i+1)),+1);
+             }
+                 return laMap;
+         }
+         else
+             throw new IllegalArgumentException("Oups rip");
     }
 
 

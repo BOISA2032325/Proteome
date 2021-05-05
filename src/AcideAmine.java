@@ -28,7 +28,7 @@ public class AcideAmine {
         Y("Tyrosine", "Tyr"),
         V("Valine", "Val"),
         O("Pyrrolysine","Pyl"),
-         U("Sélénocystéine","Sec");
+        U("Sélénocystéine","Sec");
 
 
         private String acideAmine;

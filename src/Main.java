@@ -47,8 +47,8 @@ public class Main {
 
             System.out.println("Voici le menu principal : ");
             System.out.println("- Pour entrer une proteine entrer la lettre E");
-            System.out.println("- Pour quitter le programme entrer la lettre Q");
             System.out.println("- Pour obtenir la liste des acide entrer la lettre O");
+            System.out.println("- Pour quitter le programme entrer la lettre Q");
 
             choixUtilisateurDansLeMenu = sc.next();
             choixUtilisateurDansLeMenu.toUpperCase();
@@ -72,7 +72,7 @@ public class Main {
 
                     if (choixDuMenu.equals("E")){
 
-                        System.out.println("Afin de choisir veuillez écrire le nom en minuscule avec .xml a la fin");
+                        System.out.println("Afin de choisir veuillez écrire le nom court de la proteine");
                         choixDuVivantMain = sc.next().toLowerCase();
                         chargeurXML.choixDeVivant(choixDuVivantMain);
 
@@ -96,24 +96,13 @@ public class Main {
                                 break;
                         }
 
-
-
-
                     }
 
                 }while (!choixDuMenu.equals("R"));
 
 
             }
-
-
-
-
         }while (!choixUtilisateurDansLeMenu.equals("Q"));
-
-
-
-
 
     }
 }

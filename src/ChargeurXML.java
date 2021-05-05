@@ -21,52 +21,46 @@ public class ChargeurXML {
 
     public Proteome chargeur(){
 
-        if (choixDeVivants.equals("chien")){
+        try {
+
+            File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien"+choixDeVivants+".xml");
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            Document document = documentBuilder.parse(ficher);
+            document.getDocumentElement().normalize();
+            NodeList nodeList = document.getElementsByTagName("entry");
+
+            Proteome proteome = new Proteome();
+
+            for (int temp = 0; temp < nodeList.getLength(); temp++){
+
+                Node node = nodeList.item(temp);
 
 
-            try {
-                //tfeuyt
+                if (node.getNodeType() == Node.ELEMENT_NODE){
 
-                File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien"+choixDeVivants+".xml");
-                DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-                DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-                Document document = documentBuilder.parse(ficher);
-                document.getDocumentElement().normalize();
-                NodeList nodeList = document.getElementsByTagName("entry");
+                    Element element = (Element) node;
+                    Proteine proteine1 = new Proteine();
 
-                Proteome proteome = new Proteome();
+                    proteine1.setNomLong(element.getElementsByTagName("fullName").item(0).getTextContent());
+                    proteine1.setNomCourt(element.getElementsByTagName("name").item(0).getTextContent());
+                    proteine1.setSequenceAcide(element.getElementsByTagName("sequence").item(0).getTextContent());
+                    proteome.ajouterProteine(proteine1);
 
-                for (int temp = 0; temp < nodeList.getLength(); temp++){
-
-                    Node node = nodeList.item(temp);
-
-
-                    if (node.getNodeType() == Node.ELEMENT_NODE){
-
-                        Element element = (Element) node;
-                        Proteines proteines1 = new Proteines();
-
-                        proteines1.setNomLong(element.getElementsByTagName("fullName").item(0).getTextContent());
-                        proteines1.setNomCourt(element.getElementsByTagName("name").item(0).getTextContent());
-                        proteines1.setSequenceAcide(element.getElementsByTagName("sequence").item(0).getTextContent());
-                        proteome.ajouterProteine(proteines1);
-
-                    }
                 }
-
-                return proteome;
-
-
-            } catch (ParserConfigurationException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (SAXException e) {
-                e.printStackTrace();
             }
 
+            return proteome;
 
+
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
         }
+
         return null;
     }
 

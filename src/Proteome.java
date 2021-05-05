@@ -1,18 +1,14 @@
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.stream.Stream;
 
 public class Proteome {
 
-    HashMap<String, Proteines> map = new HashMap<>();
+    HashMap<String, Proteine> map = new HashMap<>();
 
-    public void ajouterProteine(Proteines proteines){
-        map.put(proteines.getNomCourt(), proteines);
+    public void ajouterProteine(Proteine proteine){
+        map.put(proteine.getNomCourt(), proteine);
     }
 
-    Proteines rechercherNomCourtExact(String nomCourt){
+    Proteine rechercherNomCourtExact(String nomCourt){
         return map.get(nomCourt);
     }
 

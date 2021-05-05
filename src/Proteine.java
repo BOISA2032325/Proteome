@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Proteines implements Comparable<Proteines> {
+public class Proteine implements Comparable<Proteine> {
 
     String nomCourt;
     String nomLong;
@@ -34,8 +34,8 @@ public class Proteines implements Comparable<Proteines> {
 
 
     @Override
-    public int compareTo(Proteines proteines){
-        int comparason = nomCourt.compareTo(proteines.nomCourt);
+    public int compareTo(Proteine proteine){
+        int comparason = nomCourt.compareTo(proteine.nomCourt);
         return comparason;
     }
 
@@ -43,8 +43,8 @@ public class Proteines implements Comparable<Proteines> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Proteines proteines = (Proteines) o;
-        return Objects.equals(nomCourt, proteines.nomCourt);
+        Proteine proteine = (Proteine) o;
+        return Objects.equals(nomCourt, proteine.nomCourt);
     }
 
     @Override

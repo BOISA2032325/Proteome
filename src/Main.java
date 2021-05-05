@@ -72,27 +72,35 @@ public class Main {
 
                     if (choixDuMenu.equals("E")){
 
-                        System.out.println("Afin de choisir veuillez écrire le nom court de la proteine");
+                        Proteine proteineVoulu = new Proteine();
+
+
+                        System.out.println("Afin de choisir veuillez écrire le nom court du vivant");
                         choixDuVivantMain = sc.next().toLowerCase();
                         chargeurXML.choixDeVivant(choixDuVivantMain);
+                        proteome = chargeurXML.chargeur();
 
                         System.out.println("Pour afficher le proteome choisie écrire A");
                         System.out.println("Pour faire une recherche a l'aide d'acide écrire B");
                         System.out.println("Pour faire une recherche a l'aide du nom court ecrire C");
+                        System.out.println("Pour faire une recherche a l'aide du nom long écrire D");
                         choixDuMenu = sc.next();
                         char charChoixDuMenu = choixDuMenu.charAt(0);
 
                         switch (charChoixDuMenu){
                             case 'A':
-                                proteome = chargeurXML.chargeur();
                                 System.out.println(proteome);
                                 break;
                             case 'B':
                                 break;
                             case 'C':
                                 String nomCourtVoulu = sc.next();
-                                assert proteome != null;
-                                proteome.rechercherNomCourtExact(nomCourtVoulu);
+                                proteineVoulu = proteome.rechercherNomCourtExact(nomCourtVoulu);
+                                System.out.println(proteineVoulu);
+                                break;
+                            case 'D':
+                                String nomLongVoulu = sc.next();
+                                System.out.println(proteome.rechercherNomLong(nomLongVoulu));
                                 break;
                         }
 

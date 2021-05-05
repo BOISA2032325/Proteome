@@ -65,6 +65,8 @@ public class AcideAmine {
         }
     }
 
+
+
     Map<AcideAmines, Integer> lireAcideAmines(String sequence) {
          if (validationAcideAmine(sequence) == true){
              Map<AcideAmines, Integer> laMap = new HashMap<>();

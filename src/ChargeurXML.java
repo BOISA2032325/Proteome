@@ -23,7 +23,7 @@ public class ChargeurXML {
 
         try {
 
-            File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien"+choixDeVivants+".xml");
+            File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/"+choixDeVivants+".xml");
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             Document document = documentBuilder.parse(ficher);

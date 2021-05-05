@@ -34,7 +34,7 @@ public class Main {
 
         //Affichage du menu de base
 
-        Proteome proteome;
+        Proteome proteome = null;
         ChargeurXML chargeurXML = new ChargeurXML();
 
 
@@ -72,7 +72,7 @@ public class Main {
 
                     if (choixDuMenu.equals("E")){
 
-                        System.out.println("Afin de choisir veuillez écrire le nom en minuscule");
+                        System.out.println("Afin de choisir veuillez écrire le nom en minuscule avec .xml a la fin");
                         choixDuVivantMain = sc.next();
                         chargeurXML.choixDeVivant(choixDuVivantMain);
 
@@ -90,6 +90,9 @@ public class Main {
                             case 'B':
                                 break;
                             case 'C':
+                                String nomCourtVoulu = sc.next();
+                                assert proteome != null;
+                                proteome.rechercherNomCourtExact(nomCourtVoulu);
                                 break;
                         }
 

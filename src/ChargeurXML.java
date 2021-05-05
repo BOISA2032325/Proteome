@@ -22,7 +22,6 @@ public class ChargeurXML {
 
     public Proteome chargeur(){
             try {
-                //hsahswu
 
                 File ficher = new File("/Users/matho/IdeaProjects/Proteome/out/"+choixDeVivants.toLowerCase()+".xml");
                 DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();

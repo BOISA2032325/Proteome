@@ -73,7 +73,7 @@ public class Main {
                     if (choixDuMenu.equals("E")){
 
                         System.out.println("Afin de choisir veuillez écrire le nom en minuscule avec .xml a la fin");
-                        choixDuVivantMain = sc.next();
+                        choixDuVivantMain = sc.next().toLowerCase();
                         chargeurXML.choixDeVivant(choixDuVivantMain);
 
                         System.out.println("Pour afficher le proteome choisie écrire A");

@@ -28,39 +28,15 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String choixUtilisateurDansLeMenu;
+        String choixDuVivantMain;
 
-
-
-
-
-        System.out.println("baptiser la proteine 1");
-        Proteines proteines1 = new Proteines(sc.next());
-        proteome.ajouterProteine(proteines1);
-        System.out.println(proteome.rechercherNomCourtExact("ABC"));
-
-        System.out.println("baptiser la proteine 2");
-        Proteines proteines2 = new Proteines(sc.next());
-        proteome.ajouterProteine(proteines2);
-        System.out.println(proteome.rechercherNomCourtExact("DEF"));
-
-        System.out.println("baptiser la proteine 3");
-        Proteines proteines3 = new Proteines(sc.next());
-        proteome.ajouterProteine(proteines3);
-        System.out.println(proteome.rechercherNomCourtExact("GHI"));
-
-        AcideAmine acideAmine = new AcideAmine();
-        System.out.println(acideAmine.lireAcideAmines("AAAAGG"));
-        System.out.println(acideAmine.lireAcideAmines("GAGA"));
-        System.out.println(acideAmine.lireAcideAmines("GDEFF"));
 
 
         //Affichage du menu de base
 
-        File ficher = new File("/Users/sambp/IdeaProjects/Proteome/out/chien.xml");
         Proteome proteome;
         ChargeurXML chargeurXML = new ChargeurXML();
-        proteome = chargeurXML.chargeur();
-        System.out.println(proteome);
+
 
 
         System.out.println("**************************************************************************************");
@@ -73,7 +49,6 @@ public class Main {
             System.out.println("- Pour entrer une proteine entrer la lettre E");
             System.out.println("- Pour quitter le programme entrer la lettre Q");
             System.out.println("- Pour obtenir la liste des acide entrer la lettre O");
-            System.out.println("- Pour chercher une proteine par sont nom écrire C");
 
             choixUtilisateurDansLeMenu = sc.next();
             choixUtilisateurDansLeMenu.toUpperCase();
@@ -91,16 +66,36 @@ public class Main {
                 String choixDuMenu;
 
                 do {
-
-                    System.out.println("Pour ecrire une chaine d'acide ecrire E");
+                    System.out.println("Pour confirmer votre choix de menu écrire E");
                     System.out.println("Pour retourner au menu principal écrire R");
                     choixDuMenu = sc.next();
 
                     if (choixDuMenu.equals("E")){
 
-                        System.out.println("Veuillez écrire la chaine d'acide");
-                        String sequenceAcideVoulu = sc.next();
-                        System.out.println(acideAmine.lireAcideAmines(sequenceAcideVoulu));
+                        System.out.println("Afin de choisir veuillez écrire le nom en minuscule");
+                        choixDuVivantMain = sc.next();
+                        chargeurXML.choixDeVivant(choixDuVivantMain);
+
+                        System.out.println("Pour afficher le proteome choisie écrire A");
+                        System.out.println("Pour faire une recherche a l'aide d'acide écrire B");
+                        System.out.println("Pour faire une recherche a l'aide du nom court ecrire C");
+                        choixDuMenu = sc.next();
+                        char charChoixDuMenu = choixDuMenu.charAt(0);
+
+                        switch (charChoixDuMenu){
+                            case 'A':
+                                proteome = chargeurXML.chargeur();
+                                System.out.println(proteome);
+                                break;
+                            case 'B':
+                                break;
+                            case 'C':
+                                break;
+                        }
+
+
+
+
                     }
 
                 }while (!choixDuMenu.equals("R"));

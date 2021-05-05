@@ -6,15 +6,11 @@ public class Proteines implements Comparable<Proteines> {
     String nomLong;
     String sequenceAcide;
 
-    /*public Proteines(String nomCourt) {
-        this.nomCourt = nomCourt;
-    }
-
-     */
 
     public String getNomCourt() {
         return nomCourt;
     }
+
 
     public void setNomCourt(String nomCourt) {
         this.nomCourt = nomCourt;
@@ -56,12 +52,17 @@ public class Proteines implements Comparable<Proteines> {
         return Objects.hash(nomCourt);
     }
 
-    @Override
-    public String toString() {
-        return "Proteines{" +
-                "nomCourt='" + nomCourt + '\'' +
-                ", nomLong='" + nomLong + '\'' +
-                ", sequenceAcide='" + sequenceAcide + '\'' +
-                '}';
+    public String toString(){
+
+        String resultat;
+
+        resultat = '\n' + " " + '\n' + "nomCourt = " + nomCourt + '\n' +
+                "nomLong = " + nomLong + '\n' +  "sequence = "  + sequenceAcide + '\n' + " " + '\n';
+
+
+
+        return resultat;
     }
+
+
 }

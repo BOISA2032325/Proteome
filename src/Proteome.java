@@ -14,7 +14,6 @@ public class Proteome {
     }
 
     public ArrayList<Proteine>rechercherNomLong(String nomLongRechercher){
-
         ArrayList<Proteine> listProt = new ArrayList<Proteine>();
         for (Proteine p: map.values()) {
             if (p.nomLong.contains(nomLongRechercher)){

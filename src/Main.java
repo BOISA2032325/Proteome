@@ -38,7 +38,6 @@ public class Main {
         ChargeurXML chargeurXML = new ChargeurXML();
 
 
-
         System.out.println("**************************************************************************************");
         System.out.println("Bonjour utilisateur bienvenu dans le programme proténome");
         System.out.println("Ce programme sert a synthetiser des proteine");
@@ -82,7 +81,7 @@ public class Main {
 
                         System.out.println("Pour afficher le proteome choisie écrire A");
                         System.out.println("Pour faire une recherche a l'aide d'acide écrire B");
-                        System.out.println("Pour faire une recherche a l'aide du nom court ecrire C");
+                        System.out.println("Pour faire une recherche a l'aide du nom court écrire C");
                         System.out.println("Pour faire une recherche a l'aide du nom long écrire D");
                         choixDuMenu = sc.next();
                         char charChoixDuMenu = choixDuMenu.charAt(0);
@@ -92,6 +91,12 @@ public class Main {
                                 System.out.println(proteome);
                                 break;
                             case 'B':
+                                AcideAmine acideAmine = new AcideAmine();
+                                String chaineAcide = sc.next().toUpperCase();
+                                acideAmine.lireAcideAmines(chaineAcide);
+
+
+
                                 break;
                             case 'C':
                                 String nomCourtVoulu = sc.next();

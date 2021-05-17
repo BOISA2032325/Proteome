@@ -19,6 +19,8 @@ public class ChargeurXML {
         this.choixDeVivants = choixDeVivants;
     }
 
+    //Chargement du dossier voulu
+
     public Proteome chargeur(){
 
         try {

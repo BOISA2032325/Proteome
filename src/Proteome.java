@@ -9,9 +9,13 @@ public class Proteome {
         map.put(proteine.getNomCourt(), proteine);
     }
 
+    //Recherche par nom cour
+
     Proteine rechercherNomCourtExact(String nomCourt){
         return map.get(nomCourt);
     }
+
+    //Recherche par nom long
 
     public ArrayList<Proteine>rechercherNomLong(String nomLongRechercher){
         ArrayList<Proteine> listProt = new ArrayList<Proteine>();

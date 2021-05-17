@@ -29,14 +29,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String choixUtilisateurDansLeMenu;
         String choixDuVivantMain;
+        Proteome proteome = null;
+        ChargeurXML chargeurXML = new ChargeurXML();
 
 
 
         //Affichage du menu de base
-
-        Proteome proteome = null;
-        ChargeurXML chargeurXML = new ChargeurXML();
-
 
         System.out.println("**************************************************************************************");
         System.out.println("Bonjour utilisateur bienvenu dans le programme proténome");
@@ -52,6 +50,8 @@ public class Main {
             choixUtilisateurDansLeMenu = sc.next();
             choixUtilisateurDansLeMenu.toUpperCase();
 
+            //Menu si utilisateur souhaite afficher la liste des acides
+
             if (choixUtilisateurDansLeMenu.equals("O")){
 
                 for (AcideAmine.AcideAmines variable : AcideAmine.AcideAmines.values()){
@@ -59,6 +59,8 @@ public class Main {
                 }
 
             }
+
+            //Menu si utilisateur souhaite rechercher une protéine
 
             if (choixUtilisateurDansLeMenu.equals("E")){
 
@@ -115,6 +117,7 @@ public class Main {
 
 
             }
+
         }while (!choixUtilisateurDansLeMenu.equals("Q"));
 
     }

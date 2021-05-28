@@ -1,24 +1,6 @@
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.stream.Stream;
-
-
 public class Main {
 
     //Projet fait par Mathis Fortin et Samuel Boivin-Pigeon
@@ -32,8 +14,6 @@ public class Main {
         String choixDuVivantMain;
         Proteome proteome = null;
         ChargeurXML chargeurXML = new ChargeurXML();
-
-
 
         //Affichage du menu de base
 
@@ -58,7 +38,6 @@ public class Main {
                 for (AcideAmine.AcideAmines variable : AcideAmine.AcideAmines.values()){
                     System.out.println("- Abréviation courte: " + variable + " Nom complet: " + variable.getAcideAmine() + " Abréviation: " + variable.getAbreviationlongue());
                 }
-
             }
 
             //Menu si utilisateur souhaite rechercher une protéine

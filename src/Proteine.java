@@ -11,10 +11,10 @@ public class Proteine implements Comparable<Proteine> {
         return nomCourt;
     }
 
-
     public void setNomCourt(String nomCourt) {
         this.nomCourt = nomCourt;
     }
+
     public void setNomLong(String nomLong) {
         this.nomLong = nomLong;
     }
@@ -26,7 +26,6 @@ public class Proteine implements Comparable<Proteine> {
     public void setSequenceAcide(String sequenceAcide) {
         this.sequenceAcide = sequenceAcide;
     }
-
 
     public String getSequenceAcide() {
         return sequenceAcide;
@@ -58,11 +57,10 @@ public class Proteine implements Comparable<Proteine> {
 
         resultat = '\n' + " " + '\n' + "nomCourt = " + nomCourt + '\n' +
                 "nomLong = " + nomLong + '\n' +  "sequence = "  + sequenceAcide + '\n' + " " + '\n';
-
-
-
         return resultat;
+
     }
+
 
 
 }

@@ -35,40 +35,37 @@ public class AcideAmine {
         private String acideAmine;
         private String abreviationlongue;
 
-
-
-
         AcideAmines(String acideAmine, String abreviationlongue) {
             this.acideAmine = acideAmine;
             this.abreviationlongue = abreviationlongue;
 
         }
 
-         public String getAcideAmine() {
+        public String getAcideAmine() {
              return acideAmine;
-         }
+        }
 
-         public String getAbreviationlongue(){
+        public String getAbreviationlongue(){
             return abreviationlongue;
-         }
+        }
      }
 
      //Validation chaine
 
     static boolean validationAcideAmine(String chaineAcide){
         if (chaineAcide == null)
-            throw new IllegalArgumentException("Oups rip");
+            throw new IllegalArgumentException("Chaine vide");
         else {
             Pattern patternAcide = Pattern.compile("^(([1-9][0-9]*)*[ARNDCEQGHILKMFPSTWYVOU]+)*$");
             Matcher matcher = patternAcide.matcher(chaineAcide);
             boolean valide = matcher.find();
-            return valide;
+            return true;
         }
     }
 
 
 
-    Map<AcideAmines, Integer> lireAcideAmines(String sequence) {
+    public static Map<AcideAmines, Integer> lireAcideAmines(String sequence) {
          int nbAcideAmine = 0;
          if (validationAcideAmine(sequence) == true){
              Map<AcideAmines, Integer> laMap = new HashMap<>();
@@ -98,6 +95,8 @@ public class AcideAmine {
          else
              throw new IllegalArgumentException("Oups rip");
     }
+
+
 
 
 

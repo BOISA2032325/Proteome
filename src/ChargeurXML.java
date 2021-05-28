@@ -14,7 +14,6 @@ public class ChargeurXML {
 
     String choixDeVivants;
 
-
     public void choixDeVivant(String choixDeVivants){
         this.choixDeVivants = choixDeVivants;
     }
@@ -38,7 +37,6 @@ public class ChargeurXML {
 
                 Node node = nodeList.item(temp);
 
-
                 if (node.getNodeType() == Node.ELEMENT_NODE){
 
                     Element element = (Element) node;
@@ -48,12 +46,10 @@ public class ChargeurXML {
                     proteine1.setNomCourt(element.getElementsByTagName("name").item(0).getTextContent());
                     proteine1.setSequenceAcide(element.getElementsByTagName("sequence").item(0).getTextContent());
                     proteome.ajouterProteine(proteine1);
-
                 }
             }
 
             return proteome;
-
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();

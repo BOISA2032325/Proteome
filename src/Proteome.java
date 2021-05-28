@@ -30,12 +30,16 @@ public class Proteome {
         return listProt;
     }
 
+
     public Map <AcideAmine, String> mapAcideParProt (){
         for (Proteine p: mapDeProts.values()) {
-            AcideAmine.validationAcideAmine(p.sequenceAcide);
-            HashMap<AcideAmine, Integer> mapAcide = new HashMap<>();
+            AcideAmine.lireAcideAmines(p.sequenceAcide);
+            HashMap<AcideAmine.AcideAmines, Integer> mapAcide = new HashMap<>();
+            mapAcide = (HashMap<AcideAmine.AcideAmines, Integer>) AcideAmine.lireAcideAmines(p.sequenceAcide);
+
 
         }
+
     }
 
     public HashMap<AcideAmine, Proteine> comparerLesMaps(Map mapUtiValidé){

@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Proteome {
 
@@ -30,23 +27,39 @@ public class Proteome {
         return listProt;
     }
 
+    //HashMap<AcideAmine.AcideAmines, Integer> mapAcideParProt (Map mapUti)
 
-    public HashMap<AcideAmine.AcideAmines, Integer> mapAcideParProt (Map mapUti){
+
+    public ArrayList<Proteine>mapAcideParProt (String sequences){
+        HashMap<AcideAmine.AcideAmines, Integer> mapUti = new HashMap<>();
+        mapUti = (HashMap<AcideAmine.AcideAmines, Integer>) AcideAmine.lireAcideAmines(sequences);
+        ArrayList<Proteine> listAcide = new ArrayList<Proteine>();
         for (Proteine p: mapDeProts.values()) {
             AcideAmine.lireAcideAmines(p.sequenceAcide);
-            HashMap<AcideAmine.AcideAmines, Integer> mapAcide = new HashMap<>();
-            mapAcide = (HashMap<AcideAmine.AcideAmines, Integer>) AcideAmine.lireAcideAmines(p.sequenceAcide);
+            Map<AcideAmine.AcideAmines, Integer> mapAcide = new HashMap<>();
+            mapAcide =  AcideAmine.lireAcideAmines(p.sequenceAcide);
 
-            if (mapAcide.containsValue(mapUti)){
+            for (int i = 0; i < mapAcide.size(); i++) {
 
-                return mapAcide;
+
+                if (mapAcide.hashCode()<=mapUti.hashCode()){
+
+                    listAcide.add(p);
+
+
+
+                }
 
             }
 
+            return listAcide;
+
+
 
         }
+        return listAcide;
 
-        return null;
+
     }
 
     @Override

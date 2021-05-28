@@ -1,4 +1,5 @@
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 public class Main {
@@ -73,12 +74,9 @@ public class Main {
                                 System.out.println(proteome);
                                 break;
                             case 'B':
-                                AcideAmine acideAmine = new AcideAmine();
                                 System.out.println("Entrez la chaine d'acide");
                                 String chaineAcide = sc.next().toUpperCase();
-                                Map<AcideAmine.AcideAmines, Integer> mapUti;
-                                mapUti = acideAmine.lireAcideAmines(chaineAcide);
-                                proteome.mapAcideParProt(mapUti);
+                                System.out.println(proteome.mapAcideParProt(chaineAcide));
                                 break;
                             case 'C':
                                 System.out.println("Écrire le nom court voulu");

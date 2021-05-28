@@ -53,9 +53,9 @@ public class AcideAmine {
      //Validation chaine
 
     static boolean validationAcideAmine(String chaineAcide){
-        if (chaineAcide == null)
+        if (chaineAcide == null) {
             throw new IllegalArgumentException("Chaine vide");
-        else {
+        }else {
             Pattern patternAcide = Pattern.compile("^(([1-9][0-9]*)*[ARNDCEQGHILKMFPSTWYVOU]+)*$");
             Matcher matcher = patternAcide.matcher(chaineAcide);
             boolean valide = matcher.find();
@@ -69,25 +69,26 @@ public class AcideAmine {
          int nbAcideAmine = 0;
          if (validationAcideAmine(sequence)){
              Map<AcideAmines, Integer> laMap = new HashMap<>();
-             Pattern acideAmineTrouvé = Pattern.compile("[ARNDCEQGHILKMFPSTWYVOU]");
+             Pattern acideAmineTrouve = Pattern.compile("[ARNDCEQGHILKMFPSTWYVOU]");
              for (int i = 0; i < sequence.length(); i++) {
-                 if(sequence.substring(i, i+1).matches(acideAmineTrouvé.toString())){
+                 if(sequence.substring(i, i+1).matches(acideAmineTrouve.toString())){
 
-                     if (laMap.containsKey(AcideAmines.valueOf(sequence.substring(i, i+1))))
-                         laMap.replace(AcideAmines.valueOf(sequence.substring(i, i+1)), laMap.get(AcideAmines.valueOf(sequence.substring(i, i+1)))+nbAcideAmine);
-                     else
+                     if (laMap.containsKey(AcideAmines.valueOf(sequence.substring(i, i+1)))) {
+                         laMap.replace(AcideAmines.valueOf(sequence.substring(i, i + 1)), laMap.get(AcideAmines.valueOf(sequence.substring(i, i + 1))) + nbAcideAmine);
+                     }else
                          laMap.put(AcideAmines.valueOf(sequence.substring(i, i+1)),+nbAcideAmine);
 
-                 }
-                 else
+                 }else
+
                      do{
-                         if(nbAcideAmine == 0)
+                         if(nbAcideAmine == 0) {
                              nbAcideAmine = 1;
-                         else
+                         }else
                              nbAcideAmine = nbAcideAmine * 10 + sequence.charAt(i);
                              i++;
-                     }
-                     while (sequence.substring(nbAcideAmine, nbAcideAmine+1).matches(acideAmineTrouvé.toString()));
+                     }while (sequence.substring(nbAcideAmine, nbAcideAmine+1).matches(acideAmineTrouve.toString()));
+
+
              }
 
              return laMap;

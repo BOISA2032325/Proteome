@@ -5,20 +5,20 @@ import java.util.Map;
 
 public class Proteome {
 
-    HashMap<String, Proteine> map = new HashMap<>();
+    HashMap<String, Proteine> mapDeProts = new HashMap<>();
 
 
     public void ajouterProteine(Proteine proteine){
-        map.put(proteine.getNomCourt(), proteine);
+        mapDeProts.put(proteine.getNomCourt(), proteine);
     }
 
     Proteine rechercherNomCourtExact(String nomCourt){
-        return map.get(nomCourt);
+        return mapDeProts.get(nomCourt);
     }
 
     public ArrayList<Proteine>rechercherNomLong(String nomLongRechercher){
         ArrayList<Proteine> listProt = new ArrayList<Proteine>();
-        for (Proteine p: map.values()) {
+        for (Proteine p: mapDeProts.values()) {
             if (p.nomLong.contains(nomLongRechercher)){
                 listProt.add(p);
             }
@@ -26,16 +26,17 @@ public class Proteome {
         return listProt;
     }
 
-    public Map <AcideAmine, String> mapAcideParProt (HashMap map){
-        for (int i = 0; i < map.size(); i++) {
-            map = new Map<AcideAmine, String>
+    public Map <AcideAmine, String> mapAcideParProt (){
+        for (Proteine p: mapDeProts.values()) {
+            AcideAmine.validationAcideAmine(p.sequenceAcide);
+            HashMap<AcideAmine, Integer> mapAcide = new HashMap<>();
 
         }
     }
 
     public HashMap<AcideAmine, Proteine> comparerLesMaps(Map mapUtiValidé){
-        for (int i = 0; i < map.size(); i++) {
-            if(map.containsValue(mapUtiValidé) == map.containsKey(i) || map.containsValue(mapUtiValidé))
+        for (int i = 0; i < mapDeProts.size(); i++) {
+            if(mapDeProts.containsValue(mapUtiValidé) == mapDeProts.containsKey(i) || mapDeProts.containsValue(mapUtiValidé))
 
 
         }
@@ -51,7 +52,7 @@ public class Proteome {
     @Override
     public String toString() {
         return "Proteome{" +
-                "map=" + map +
+                "map=" + mapDeProts +
                 '}';
     }
 }

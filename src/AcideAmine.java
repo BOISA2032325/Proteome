@@ -67,7 +67,7 @@ public class AcideAmine {
 
     public static Map<AcideAmines, Integer> lireAcideAmines(String sequence) {
          int nbAcideAmine = 0;
-         if (validationAcideAmine(sequence) == true){
+         if (validationAcideAmine(sequence)){
              Map<AcideAmines, Integer> laMap = new HashMap<>();
              Pattern acideAmineTrouvé = Pattern.compile("[ARNDCEQGHILKMFPSTWYVOU]");
              for (int i = 0; i < sequence.length(); i++) {

@@ -31,30 +31,22 @@ public class Proteome {
     }
 
 
-    public Map <AcideAmine, String> mapAcideParProt (){
+    public HashMap<AcideAmine.AcideAmines, Integer> mapAcideParProt (Map mapUti){
         for (Proteine p: mapDeProts.values()) {
             AcideAmine.lireAcideAmines(p.sequenceAcide);
             HashMap<AcideAmine.AcideAmines, Integer> mapAcide = new HashMap<>();
             mapAcide = (HashMap<AcideAmine.AcideAmines, Integer>) AcideAmine.lireAcideAmines(p.sequenceAcide);
 
+            if (mapAcide.containsValue(mapUti)){
 
-        }
+                return mapAcide;
 
-    }
-
-    public HashMap<AcideAmine, Proteine> comparerLesMaps(Map mapUtiValidé){
-        for (int i = 0; i < mapDeProts.size(); i++) {
-            if(mapDeProts.containsValue(mapUtiValidé) == mapDeProts.containsKey(i) || mapDeProts.containsValue(mapUtiValidé))
+            }
 
 
         }
 
-    }
-
-    public List<Proteine> rechercherParAcide (Map mapUtiValidé){
-
-
-
+        return null;
     }
 
     @Override

@@ -74,20 +74,20 @@ public class Main {
                                 break;
                             case 'B':
                                 AcideAmine acideAmine = new AcideAmine();
+                                System.out.println("Entrez la chaine d'acide");
                                 String chaineAcide = sc.next().toUpperCase();
                                 Map<AcideAmine.AcideAmines, Integer> mapUti;
                                 mapUti = acideAmine.lireAcideAmines(chaineAcide);
-                                proteome.rechercherParAcide(mapUti);
-
-
-
+                                proteome.mapAcideParProt(mapUti);
                                 break;
                             case 'C':
+                                System.out.println("Écrire le nom court voulu");
                                 String nomCourtVoulu = sc.next();
                                 proteineVoulu = proteome.rechercherNomCourtExact(nomCourtVoulu);
                                 System.out.println(proteineVoulu);
                                 break;
                             case 'D':
+                                System.out.println("Ecrire le nom long voulu");
                                 String nomLongVoulu = sc.next();
                                 System.out.println(proteome.rechercherNomLong(nomLongVoulu));
                                 break;

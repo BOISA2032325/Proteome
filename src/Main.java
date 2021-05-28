@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
@@ -95,7 +96,9 @@ public class Main {
                             case 'B':
                                 AcideAmine acideAmine = new AcideAmine();
                                 String chaineAcide = sc.next().toUpperCase();
-                                acideAmine.lireAcideAmines(chaineAcide);
+                                Map<AcideAmine.AcideAmines, Integer> mapUti;
+                                mapUti = acideAmine.lireAcideAmines(chaineAcide);
+                                proteome.rechercherParAcide(mapUti);
 
 
 

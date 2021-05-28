@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Proteome {
 
     HashMap<String, Proteine> map = new HashMap<>();
+
 
     public void ajouterProteine(Proteine proteine){
         map.put(proteine.getNomCourt(), proteine);
@@ -21,6 +24,28 @@ public class Proteome {
             }
         }
         return listProt;
+    }
+
+    public Map <AcideAmine, String> mapAcideParProt (HashMap map){
+        for (int i = 0; i < map.size(); i++) {
+            map = new Map<AcideAmine, String>
+
+        }
+    }
+
+    public HashMap<AcideAmine, Proteine> comparerLesMaps(Map mapUtiValidé){
+        for (int i = 0; i < map.size(); i++) {
+            if(map.containsValue(mapUtiValidé) == map.containsKey(i) || map.containsValue(mapUtiValidé))
+
+
+        }
+
+    }
+
+    public List<Proteine> rechercherParAcide (Map mapUtiValidé){
+
+
+
     }
 
     @Override

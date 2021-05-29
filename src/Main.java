@@ -1,6 +1,3 @@
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 public class Main {
 
@@ -94,11 +91,8 @@ public class Main {
                     }
 
                 }while (!choixDuMenu.equals("R"));
-
-
             }
-
-        }while (!choixUtilisateurDansLeMenu.equals("Q"));
-
+        }
+        while (!choixUtilisateurDansLeMenu.equals("Q"));
     }
 }

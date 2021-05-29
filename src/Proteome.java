@@ -41,25 +41,13 @@ public class Proteome {
 
             for (int i = 0; i < mapAcide.size(); i++) {
 
-
                 if (mapAcide.hashCode()<=mapUti.hashCode()){
-
                     listAcide.add(p);
-
-
-
                 }
-
             }
-
             return listAcide;
-
-
-
         }
         return listAcide;
-
-
     }
 
     @Override

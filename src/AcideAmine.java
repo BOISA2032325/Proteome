@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -77,7 +76,6 @@ public class AcideAmine {
                          laMap.replace(AcideAmines.valueOf(sequence.substring(i, i + 1)), laMap.get(AcideAmines.valueOf(sequence.substring(i, i + 1))) + nbAcideAmine);
                      }else
                          laMap.put(AcideAmines.valueOf(sequence.substring(i, i+1)),+nbAcideAmine);
-
                  }else
 
                      do{
@@ -87,21 +85,10 @@ public class AcideAmine {
                              nbAcideAmine = nbAcideAmine * 10 + sequence.charAt(i);
                              i++;
                      }while (sequence.substring(nbAcideAmine, nbAcideAmine+1).matches(acideAmineTrouve.toString()));
-
-
              }
-
              return laMap;
          }
          else
              throw new IllegalArgumentException("Oups rip");
     }
-
-
-
-
-
-
-
 }
-

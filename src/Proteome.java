@@ -29,7 +29,6 @@ public class Proteome {
 
     //HashMap<AcideAmine.AcideAmines, Integer> mapAcideParProt (Map mapUti)
 
-
     public ArrayList<Proteine>mapAcideParProt (String sequences){
         HashMap<AcideAmine.AcideAmines, Integer> mapUti = new HashMap<>();
         mapUti = (HashMap<AcideAmine.AcideAmines, Integer>) AcideAmine.lireAcideAmines(sequences);
